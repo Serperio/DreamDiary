@@ -17,13 +17,15 @@ public class playermovement : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
+        if (Vector3.Distance(transform.position, movePoint.position) <= .5f)
         {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
+            float HorizontalAxis = Input.GetAxisRaw("Horizontal");
+            float VerticalAxis = Input.GetAxisRaw("Vertical");
+            if (Mathf.Abs(HorizontalAxis) == 1f)
             {
-                movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f,0f);
+                movePoint.position += new Vector3(HorizontalAxis, 0f,0f);
             }
-            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+            else if (Mathf.Abs(VerticalAxis) == 1f)
             {
                 movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"),0f);
             }
