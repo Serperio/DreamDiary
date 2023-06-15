@@ -10,7 +10,9 @@ public abstract class Efecto : MonoBehaviour
 
     public abstract void EjecutarEfecto();
 
-    public void ChangeSprite(){
+    public void CambiarSprite(){
         Debug.Log("Cambiar sprite");
     }
+
+    public abstract void QuitarEfecto();
 }

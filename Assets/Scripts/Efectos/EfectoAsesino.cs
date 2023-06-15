@@ -8,4 +8,8 @@ public class EfectoAsesino : Efecto
     public override void EjecutarEfecto(){
         Debug.Log("Borrar objeto en frente");
     }
+
+    public override void QuitarEfecto(){
+        Debug.Log("Borrar efecto");
+    }
 }

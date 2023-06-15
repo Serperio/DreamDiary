@@ -1,5 +1,5 @@
 using System.Collections.Generic;
 
-public class Efectos_data{
+public class EfectosData{
     public List<int> Efectos;
 }

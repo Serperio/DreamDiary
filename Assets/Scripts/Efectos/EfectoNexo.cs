@@ -11,4 +11,8 @@ public class EfectoNexo : Efecto
     public override void EjecutarEfecto(){
         SceneManager.LoadScene(Scene);
     }
+
+    public override void QuitarEfecto(){
+        Debug.Log("Borrar efecto");
+    }
 }

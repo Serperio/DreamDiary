@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class EfectoCorrer : Efecto
 {
+    [SerializeField]
+    GameObject Player;
+    [SerializeField]
+    float maxSpeed;
+    [SerializeField]
+    float minSpeed;
+
     public override void EjecutarEfecto(){
-        Debug.Log("Cambiar velocidad personaje");
+        Player.GetComponent<PlayerMovement>().moveSpeed = maxSpeed;
+    }
+
+    public override void QuitarEfecto(){
+        Player.GetComponent<PlayerMovement>().moveSpeed = minSpeed;
     }
 }

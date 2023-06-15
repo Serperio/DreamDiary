@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class save_load : MonoBehaviour
+public class SaveLoad : MonoBehaviour
 {
     private string file_path;
     [SerializeField]
@@ -15,16 +15,17 @@ public class save_load : MonoBehaviour
     }
 
     public void SaveState(){
-        Efectos_data data = new Efectos_data() { Efectos = efectos };
+        EfectosData data = new EfectosData() { Efectos = efectos };
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(file_path, json);
     }
 
-    public void LoadState(){
+    public EfectosData LoadState(){
         string json = File.ReadAllText(file_path);
-        Efectos_data data = JsonUtility.FromJson<Efectos_data>(json);
+        EfectosData data = JsonUtility.FromJson<EfectosData>(json);
         for(int i = 0; i < data.Efectos.Count; i++){
             Debug.Log(data.Efectos[i]);
         }
+        return data;
     }
 }
