@@ -20,11 +20,12 @@ public class save_load : MonoBehaviour
         File.WriteAllText(file_path, json);
     }
 
-    public void LoadState(){
+    public Efectos_data LoadState(){
         string json = File.ReadAllText(file_path);
         Efectos_data data = JsonUtility.FromJson<Efectos_data>(json);
         for(int i = 0; i < data.Efectos.Count; i++){
             Debug.Log(data.Efectos[i]);
         }
+        return data;
     }
 }
