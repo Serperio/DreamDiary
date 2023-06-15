@@ -5,11 +5,18 @@ using UnityEngine;
 public class EfectoAsesino : Efecto
 {
 
+    enum Estado {activo, inactivo};
+    Estado estado = Estado.inactivo;
+
     public override void EjecutarEfecto(){
-        Debug.Log("Borrar objeto en frente");
+        estado = Estado.activo;
     }
 
     public override void QuitarEfecto(){
-        Debug.Log("Borrar efecto");
+        estado = Estado.inactivo;
+    }
+
+    public bool efectoActivado(){
+        return estado == Estado.activo;
     }
 }
