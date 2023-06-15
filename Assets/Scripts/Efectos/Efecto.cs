@@ -5,7 +5,12 @@ using UnityEngine;
 public abstract class Efecto : MonoBehaviour
 {
     public int ID;
-    public string Nombre;
+    public string nombre;
+    public Sprite nuevoSprite;
 
-    public abstract void ejecutarEfecto();
+    public abstract void EjecutarEfecto();
+
+    public void ChangeSprite(){
+        Debug.Log("Cambiar sprite");
+    }
 }
